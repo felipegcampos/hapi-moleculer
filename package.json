@@ -1,0 +1,37 @@
+{
+  "name": "hapi-moleculer",
+  "version": "1.0.0",
+  "description": "Hapi.js plugin for MoleculerJS integration",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "hapi",
+    "moleculer",
+    "broker",
+    "microservices"
+  ],
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "author": "Felipe Campos <felipegcampos@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipegcampos/hapi-moleculer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/felipegcampos/hapi-moleculer/issues"
+  },
+  "homepage": "https://github.com/felipegcampos/hapi-moleculer#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "hapi": "^17.5.0"
+  },
+  "dependencies": {
+    "boom": "^7.2.0",
+    "joi": "^13.3.0",
+    "moleculer": "^0.12.5"
+  }
+}
