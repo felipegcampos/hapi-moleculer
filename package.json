@@ -1,10 +1,10 @@
 {
   "name": "hapi-moleculer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Hapi.js plugin for MoleculerJS integration",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "standard && lab"
   },
   "keywords": [
     "hapi",
@@ -26,8 +26,11 @@
   },
   "homepage": "https://github.com/felipegcampos/hapi-moleculer#readme",
   "devDependencies": {
+    "code": "^5.2.0",
     "eslint": "^4.19.1",
-    "hapi": "^17.5.0"
+    "hapi": "^17.5.0",
+    "lab": "^15.4.5",
+    "standard": "^11.0.1"
   },
   "dependencies": {
     "boom": "^7.2.0",

@@ -38,7 +38,7 @@ const { ServiceBroker } =  require('moleculer');
 			},
 			aliases: [{
 				method:  'REST',
-				path:  '/user',
+				path:  '/users',
 				action:  'users',
 				routeOpts: {
 					// Add tags in all routes
@@ -86,7 +86,7 @@ const { ServiceBroker } =  require('moleculer');
 
 ### Options
 
- - `broker` - **(required)** Either a ServiceBroker seeting object or a [ServiceBroker](http://moleculer.services/0.12/api/service-broker.html#ServiceBroker) instance. Eg:
+ - `broker` - **(optional)** Either a ServiceBroker seeting object or a [ServiceBroker](http://moleculer.services/0.12/api/service-broker.html#ServiceBroker) instance. Default to `{}`. Eg:
  ```javascript
 // Register the plugin
 await  server.register({
