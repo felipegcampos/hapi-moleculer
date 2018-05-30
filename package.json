@@ -13,7 +13,7 @@
     "microservices"
   ],
   "engines": {
-    "node": ">=8.9.0"
+    "node": ">= 6.x.x"
   },
   "author": "Felipe Campos <felipegcampos@gmail.com>",
   "license": "ISC",

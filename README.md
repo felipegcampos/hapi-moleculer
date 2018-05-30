@@ -1,4 +1,4 @@
-# hapi-moleculer
+# hapi-moleculer [![npm version](https://badge.fury.io/js/hapi-moleculer.svg)](https://badge.fury.io/js/hapi-moleculer) [![Build Status](https://travis-ci.com/felipegcampos/hapi-moleculer.svg?branch=master)](https://travis-ci.com/felipegcampos/hapi-moleculer)
 ![Hapi plugin for the Moleculer Microservices Framework](./assets/header.png)
 
 [Hapi](https://hapijs.com/) plugin for the [Moleculer Microservices Framework](http://moleculer.services/).
