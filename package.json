@@ -1,10 +1,11 @@
 {
   "name": "hapi-moleculer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Hapi.js plugin for MoleculerJS integration",
   "main": "index.js",
   "scripts": {
-    "test": "standard && lab"
+    "test": "standard && lab",
+    "coverage": "lab -r lcov -o coverage/lcov.info"
   },
   "keywords": [
     "hapi",
@@ -13,7 +14,7 @@
     "microservices"
   ],
   "engines": {
-    "node": ">= 6.x.x"
+    "node": ">= 8.x.x"
   },
   "author": "Felipe Campos <felipegcampos@gmail.com>",
   "license": "ISC",
