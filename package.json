@@ -1,6 +1,6 @@
 {
   "name": "hapi-moleculer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Hapi.js plugin for MoleculerJS integration",
   "main": "index.js",
   "scripts": {

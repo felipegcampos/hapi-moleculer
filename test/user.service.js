@@ -24,6 +24,9 @@ module.exports = {
     },
     context (ctx) {
       return `User context ${ctx.meta.userId}`
+    },
+    noret () {
+      // do smth here and do not return
     }
   }
 }

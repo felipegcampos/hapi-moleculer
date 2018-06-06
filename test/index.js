@@ -40,6 +40,10 @@ const setup = async () => {
           ]
         }
       }, {
+        method: 'GET',
+        path: '/user/noret',
+        action: 'user.noret'
+      }, {
         method: 'REST',
         path: '/users',
         action: 'user'
@@ -142,6 +146,13 @@ lab.experiment('HapiMoleculer', () => {
 
         expect(res.statusCode).to.equal(400)
         expect(res.statusMessage).to.equal('Bad Request')
+      })
+
+      lab.test('should return success status if no return from action', async () => {
+        const res = await server.inject('/user/noret')
+
+        expect(res.statusCode).to.equal(200)
+        expect(res.result).to.equal('')
       })
     })
 
