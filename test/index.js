@@ -23,6 +23,23 @@ const setup = async () => {
         path: '/user/login',
         action: 'user.login'
       }, {
+        method: 'POST',
+        path: '/user/context',
+        action: 'user.context',
+        routeOpts: {
+          validate: {
+            query: {
+              name: Joi.string().default('Felipe')
+            }
+          },
+          pre: [
+            (request, h) => {
+              request.ctx.meta.userId = 123456
+              return h.continue
+            }
+          ]
+        }
+      }, {
         method: 'REST',
         path: '/users',
         action: 'user'
@@ -176,6 +193,15 @@ lab.experiment('HapiMoleculer', () => {
 
         expect(res.request.route.settings.description).to.exists()
         expect(res.request.route.settings.description).to.equal('Overwritten description')
+      })
+    })
+
+    lab.experiment('moleculer context', () => {
+      lab.test('should create context', async () => {
+        const res = await server.inject({ url: '/user/context', method: 'POST' })
+
+        expect(res.statusCode).to.equal(200)
+        expect(res.result).to.equal('User context 123456')
       })
     })
 

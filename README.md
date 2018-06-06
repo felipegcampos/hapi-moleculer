@@ -86,10 +86,12 @@ const { ServiceBroker } =  require('moleculer');
 
  - [Options](#options)
  - [Decorations](#decorations)
+ - [Context](#context)
  
 
 ### Options
 
+ - `name` - **(optional)** Service name that will be used to create the context action names. Default to `api`.
  - `broker` - **(optional)** Either a ServiceBroker seeting object or a [ServiceBroker](http://moleculer.services/0.12/api/service-broker.html#ServiceBroker) instance. Default to `{}`. Eg:
  ```javascript
 // Register the plugin
@@ -178,6 +180,68 @@ const route = {
 		return  request.broker.call('users.logout', { token });
 	},
 };
+```
+
+### Context
+
+**hapi-moleculer** creates a [Moleculer Context](http://moleculer.services/0.12/api/context.html) to wrap the call in every request. It uses the [Hapi request lifecyle workflow](https://hapijs.com/api#lifecycle-workflow) to first create the Context in the `onPreAuth` step and then set the params in the `onPreHandler` step. The context can be accessed with `request.ctx`. Hence, you can use it to set the `ctx.meta` in the autencation step or any other step you need. Eg.:
+```javascript
+"use strict";
+
+const Bcrypt = require("bcrypt");
+const Hapi = require("hapi");
+
+const users = {
+  john: {
+    username: "john",
+    password: "$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm", // 'secret'
+    name: "John Doe",
+    id: "2133d32a"
+  }
+};
+
+const validate = async (request, username, password) => {
+  const user = users[username];
+  if (!user) {
+    return { credentials: null, isValid: false };
+  }
+
+  const isValid = await Bcrypt.compare(password, user.password);
+  const credentials = { id: user.id, name: user.name };
+
+  // Set the meta if the credentials are valid.
+  if (isValid) {
+    request.ctx.meta.credentials = credentials;
+  }
+
+  return { isValid, credentials };
+};
+
+const start = async () => {
+  const server = Hapi.server({ port: 4000 });
+
+	await server.register(require("hapi-auth-basic"));
+	await server.register(require("hapi-moleculer"));
+
+  server.auth.strategy("simple", "basic", { validate });
+
+  server.route({
+    method: "GET",
+    path: "/",
+    options: {
+      auth: "simple"
+    },
+    handler: function(request, h) {
+      return "welcome";
+    }
+  });
+
+  await server.start();
+
+  console.log("server running at: " + server.info.uri);
+};
+
+start();
 ```
 
 ## License

@@ -21,6 +21,9 @@ module.exports = {
     },
     remove (ctx) {
       return `Remove user ${ctx.params.id}`
+    },
+    context (ctx) {
+      return `User context ${ctx.meta.userId}`
     }
   }
 }
