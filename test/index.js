@@ -71,6 +71,11 @@ const setup = async () => {
           }
         }
       }, {
+        method: 'REST',
+        path: '/blacklist',
+        action: 'user',
+        blacklist: ['create', 'update']
+      }, {
         method: 'GET',
         path: '/error',
         action: 'test'
@@ -204,6 +209,19 @@ lab.experiment('HapiMoleculer', () => {
 
         expect(res.request.route.settings.description).to.exists()
         expect(res.request.route.settings.description).to.equal('Overwritten description')
+      })
+
+      lab.test('should fail to access blacklisted route', async () => {
+        const res = await server.inject({ url: '/blacklist', method: 'POST' })
+
+        expect(res.statusCode).to.equal(404)
+      })
+
+      lab.test('should access non-blacklisted route', async () => {
+        const res = await server.inject({ url: '/blacklist', method: 'GET' })
+
+        expect(res.statusCode).to.equal(200)
+        expect(res.result).to.equal('List users')
       })
     })
 

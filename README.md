@@ -136,6 +136,16 @@ await  server.register({ plugin, options: { broker });
 
 	 - `path` - **(required)** the absolute path used to match incoming requests ( *must begin with '/'* ).
 	 - `action` - **(required)** Moleculer [action](http://moleculer.services/0.12/docs/service.html#Actions) name.
+	 - `blacklist` - **(optional)** A list of actions that will be cut out from the RESTful paths. Valid values: `list`, `get`, `create`, `update` and `remove`. **Only valid if `method` is `REST`**. Eg.:
+	```javascript
+	[{
+		method: 'REST',
+		path: '/user',
+		action: 'users',
+		// it will create just list, get and remove
+		blacklist: ['create', 'update']
+	}]
+	```
 	 - `routeOpts` - **(optional)** additional [route options](https://hapijs.com/api#route-options). When the method name is equal to `REST` the routeOpts has all 5 RESTful options plus one `all` properties:
 		 ```javascript
 		[{
@@ -159,7 +169,7 @@ await  server.register({ plugin, options: { broker });
 			},
 		 }]
 		```
-		> Assign values in the following order: ***inner default opts***, ***routeOpts.all*** and ***routeOpts.[actionType]*** using [lodash.assign](https://lodash.com/docs/4.17.10#assign).
+		> Assign values in the following order: **inner default opts**, **routeOpts.all** and **routeOpts.[actionType]** using [lodash.assign](https://lodash.com/docs/4.17.10#assign).
 
 ### Decorations
 
