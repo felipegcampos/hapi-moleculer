@@ -25,6 +25,12 @@ module.exports = {
     context(ctx) {
       return `User context ${ctx.meta.userId}`;
     },
+    confidential: {
+      visibility: 'public',
+      handler(ctx) {
+        return 'Confidential!';
+      },
+    },
     noret() {
       // do smth here and do not return
     },

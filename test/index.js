@@ -10,8 +10,13 @@ const HapiMoleculer = require('../lib');
 
 const setup = async () => {
   const server = new Hapi.Server();
+  server.route({
+    method: 'GET',
+    path: '/hapi/custom',
+    handler: () => 'Hapi Custom',
+  });
 
-  const broker = new ServiceBroker();
+  const broker = new ServiceBroker({ logger: false });
   broker.loadService('./test/user.service');
 
   await server.register({
@@ -65,6 +70,11 @@ const setup = async () => {
           },
         },
         {
+          method: 'GET',
+          path: '/user/confidential',
+          action: 'user.confidential',
+        },
+        {
           method: 'REST',
           path: '/rest',
           action: 'user',
@@ -106,6 +116,7 @@ lab.experiment('HapiMoleculer', () => {
         options: {
           broker: {
             namespace: 'testnmsp',
+            logger: false,
           },
         },
       });
@@ -171,6 +182,11 @@ lab.experiment('HapiMoleculer', () => {
           expect(res.result).to.equal('');
         }
       );
+
+      lab.test('should fail with strict visibility', async () => {
+        const res = await server.inject('/user/confidential');
+        expect(res.statusCode).to.equal(404);
+      });
     });
 
     lab.experiment('rest alias', () => {
@@ -271,6 +287,15 @@ lab.experiment('HapiMoleculer', () => {
         expect(res.result.statusCode).to.equal(404);
         expect(res.result.error).to.equal('Not Found');
         expect(res.result.message).to.equal("Service 'test' is not found.");
+      });
+    });
+
+    lab.experiment('hapi requests', () => {
+      lab.test('should execute hapi custom request', async () => {
+        const res = await server.inject('/hapi/custom');
+
+        expect(res.statusCode).to.equal(200);
+        expect(res.result).to.equal('Hapi Custom');
       });
     });
   });

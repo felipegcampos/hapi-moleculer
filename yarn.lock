@@ -158,14 +158,14 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
-args@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/args/-/args-4.0.0.tgz#5ca24cdba43d4b17111c56616f5f2e9d91933954"
+args@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/args/-/args-5.0.0.tgz#8a3e376f28550f9fbdfefcb097179f2f75848efe"
   dependencies:
     camelcase "5.0.0"
-    chalk "2.3.2"
+    chalk "2.4.1"
     leven "2.1.0"
-    mri "1.1.0"
+    mri "1.1.1"
 
 array-union@^1.0.1:
   version "1.0.2"
@@ -309,14 +309,6 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-chalk@2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.2.tgz#250dc96b07491bfd601e648d66ddf5f60c7a5c65"
-  dependencies:
-    ansi-styles "^3.2.1"
-    escape-string-regexp "^1.0.5"
-    supports-color "^5.3.0"
-
 chalk@2.4.1, chalk@^2.0.0, chalk@^2.1.0, chalk@^2.3.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
@@ -376,14 +368,14 @@ code@^5.2.0:
     hoek "5.x.x"
 
 color-convert@^1.9.0:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.1.tgz#c1261107aeb2f294ebffec9ed9ecad529a6097ed"
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.2.tgz#49881b8fba67df12a96bdf3f56c0aab9e7913147"
   dependencies:
-    color-name "^1.1.1"
+    color-name "1.1.1"
 
-color-name@^1.1.1:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
+color-name@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.1.tgz#4b1415304cf50028ea81643643bd82ea05803689"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -644,9 +636,9 @@ fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
-fastest-validator@0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-0.6.6.tgz#93d7d87f952abf608bf5f5d6cbbc1ee7576d1fd6"
+fastest-validator@0.6.10:
+  version "0.6.10"
+  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-0.6.10.tgz#1d120c2fa9afd73612911db099ff707c028f8461"
 
 figures@^2.0.0:
   version "2.0.0"
@@ -1130,26 +1122,21 @@ mkdirp@0.5.x, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-moleculer@^0.12.5:
-  version "0.12.5"
-  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.12.5.tgz#fafe80ac23ffa1eb76a5faa7bd3108b71b4ccb9b"
+moleculer@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.13.0.tgz#560d875afa5755e96486c01d9946f2f208a37ee6"
   dependencies:
-    args "4.0.0"
+    args "5.0.0"
     bluebird "3.5.1"
     chalk "2.4.1"
     es6-error "4.1.1"
     eventemitter2 "5.0.1"
-    fastest-validator "0.6.6"
+    fastest-validator "0.6.10"
     glob "7.1.2"
     ipaddr.js "1.7.0"
     lodash "4.17.10"
-    node-object-hash "1.3.0"
 
-mri@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mri/-/mri-1.1.0.tgz#5c0a3f29c8ccffbbb1ec941dcec09d71fa32f36a"
-
-mri@^1.1.0:
+mri@1.1.1, mri@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/mri/-/mri-1.1.1.tgz#85aa26d3daeeeedf80dc5984af95cc5ca5cad9f1"
 
@@ -1175,10 +1162,6 @@ nigel@3.x.x:
 no-arrowception@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/no-arrowception/-/no-arrowception-1.0.0.tgz#5bf3e95eb9c41b57384a805333daa3b734ee327a"
-
-node-object-hash@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/node-object-hash/-/node-object-hash-1.3.0.tgz#7f294f5afec6b08d713e40d40a95ec793e05baf3"
 
 normalize-package-data@^2.3.2:
   version "2.4.0"
