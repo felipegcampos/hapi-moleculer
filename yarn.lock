@@ -865,9 +865,9 @@ invariant@^2.2.0:
   dependencies:
     loose-envify "^1.0.0"
 
-ipaddr.js@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.7.0.tgz#2206ed334afc32e01fed3ee838b6b2521068b9d2"
+ipaddr.js@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.8.0.tgz#eaa33d6ddd7ace8f7f6fe0c9ca0440e706738b1e"
 
 iron@5.x.x:
   version "5.0.4"
@@ -1122,9 +1122,9 @@ mkdirp@0.5.x, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-moleculer@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.13.0.tgz#560d875afa5755e96486c01d9946f2f208a37ee6"
+moleculer@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.13.1.tgz#71451aae7e3129c212e1fc2c7121b7cc1e1a8ee5"
   dependencies:
     args "5.0.0"
     bluebird "3.5.1"
@@ -1133,7 +1133,7 @@ moleculer@^0.13.0:
     eventemitter2 "5.0.1"
     fastest-validator "0.6.10"
     glob "7.1.2"
-    ipaddr.js "1.7.0"
+    ipaddr.js "1.8.0"
     lodash "4.17.10"
 
 mri@1.1.1, mri@^1.1.0:

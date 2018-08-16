@@ -1,6 +1,6 @@
 {
   "name": "hapi-moleculer",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Hapi.js plugin for MoleculerJS integration",
   "main": "index.js",
   "scripts": {
@@ -36,13 +36,13 @@
     "hapi": "^17.5.0",
     "husky": "^1.0.0-rc.8",
     "lab": "^15.4.5",
+    "moleculer": "^0.13.1",
     "prettier": "1.13.4",
     "pretty-quick": "^1.6.0"
   },
   "dependencies": {
     "boom": "^7.2.0",
-    "joi": "^13.3.0",
-    "moleculer": "^0.13.0"
+    "joi": "^13.3.0"
   },
   "husky": {
     "hooks": {
