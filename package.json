@@ -1,6 +1,6 @@
 {
   "name": "hapi-moleculer",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Hapi.js plugin for MoleculerJS integration",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/felipegcampos/hapi-moleculer#readme",
   "devDependencies": {
+    "amqplib": "^0.5.2",
     "babel-eslint": "^8.2.3",
     "code": "^5.2.0",
     "eslint": "^4.19.1",

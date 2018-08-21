@@ -98,6 +98,11 @@ const setup = async () => {
           path: '/error',
           action: 'test',
         },
+        {
+          method: 'GET',
+          path: '/nostatuserror',
+          action: 'user.nostatuserror',
+        },
       ],
     },
   });
@@ -279,7 +284,7 @@ lab.experiment('HapiMoleculer', () => {
     });
 
     lab.experiment('errors', () => {
-      lab.test('should bomify moleculer error', async () => {
+      lab.test('should bomify moleculer error with status', async () => {
         const res = await server.inject('/error');
 
         expect(res.statusCode).to.equal(404);
@@ -287,6 +292,16 @@ lab.experiment('HapiMoleculer', () => {
         expect(res.result.statusCode).to.equal(404);
         expect(res.result.error).to.equal('Not Found');
         expect(res.result.message).to.equal("Service 'test' is not found.");
+      });
+
+      lab.test('should bomify moleculer error with no status', async () => {
+        const res = await server.inject('/nostatuserror');
+
+        expect(res.statusCode).to.equal(400);
+        expect(res.result).to.exist();
+        expect(res.result.statusCode).to.equal(400);
+        expect(res.result.error).to.equal('Bad Request');
+        expect(res.result.message).to.equal("It's a no status error.");
       });
     });
 

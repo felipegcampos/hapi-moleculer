@@ -34,5 +34,8 @@ module.exports = {
     noret() {
       // do smth here and do not return
     },
+    nostatuserror() {
+      throw new Error("It's a no status error.");
+    },
   },
 };
